@@ -16,7 +16,7 @@ const Booking = ({ selectedPitch }) => {
 
   const handleDurationClick = (duration) => {
     setSelectedDuration(duration);
-    setSelectedSlot(null); // reset slot selection
+    setSelectedSlot(null);
   };
 
   const handleShowSlotsClick = () => {
@@ -134,7 +134,7 @@ const Booking = ({ selectedPitch }) => {
                   className="book-button"
                   type="button"
                   onClick={handleBooking}
-                  disabled={isBooked} // Disable button if already booked
+                  disabled={isBooked}
                 >
                   {isBooked ? "Booked" : "Book Now"}
                 </button>

@@ -22,42 +22,51 @@ export default function Navbar(props) {
         </div>
 
         <SearchBar />
-        <div className="dropdown">
-          <button
-            className="dropdown btn-back"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img src={prof_icon} alt="" />
-          </button>
-          <ul className="dropdown-menu dropdown-menu-end mt-2">
-            <li>
-              <div className="signup">
-                <Link
-                  to="./authpage"
-                  className="btn-sign"
-                  onClick={ChangeAuthSign}
-                >
-                  SignUp
-                </Link>
-              </div>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <div className="logIn">
-                <Link
-                  to="./authpage"
-                  className="btn-log"
-                  onClick={ChangeAuthLog}
-                >
-                  Login
-                </Link>
-              </div>
-            </li>
-          </ul>
+
+        <div className="button-owner-auth">
+          <div className="button-owner">
+              <Link to="./ground_owner" className="btn-owner custom-css">
+                Ground Owner
+              </Link>
+          </div>
+
+          <div className="dropdown">
+            <button
+              className="dropdown btn-back"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src={prof_icon} alt="" />
+            </button>
+            <ul className="dropdown-menu dropdown-menu-end mt-2">
+              <li>
+                <div className="signup">
+                  <Link
+                    to="./authpage"
+                    className="btn-sign"
+                    onClick={ChangeAuthSign}
+                  >
+                    SignUp
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+              <li>
+                <div className="logIn">
+                  <Link
+                    to="./authpage"
+                    className="btn-log"
+                    onClick={ChangeAuthLog}
+                  >
+                    Login
+                  </Link>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </>

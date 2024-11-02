@@ -6,6 +6,8 @@ import Home from "./Components/Home";
 import React, { useState } from "react";
 import Footer from "./Components/Footer";
 import Ground from "./Components/Ground";
+import AuthPage_Owner from "./Components/AuthPage_Owner";
+import Ground_Owner from "./Components/Ground_Owner";
 
 function App() {
   const [authMode, setAuthMode] = useState("SignUp");
@@ -31,6 +33,8 @@ function App() {
             }
           />
           <Route path="/ground" element={<Ground />} />
+          {/* <Route path="/authpage_owner" element={<AuthPage_Owner />} /> */}
+          <Route path="/ground_owner" element={<Ground_Owner />} />
         </Routes>
         <Footer />
       </Router>

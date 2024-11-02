@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import axios from "axios"; // For making API calls
 import Booking from "./Booking";
 import Map from "./Map";
 import Review from "./Review";
+import std_icon from "../Assets/sign_Bg.jpeg";
+import stdd_icon from "../Assets/login_Bg.jpeg";
 
 export default function Ground() {
-  const [groundData, setGroundData] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [selectedPitch, setSelectedPitch] = useState(null);
-
-  // Fetch ground data from API
-  useEffect(() => {
-    // Example API call to fetch ground details
-    axios
-      .get("https://your-api-url.com/ground/{ground_id}")
-      .then((response) => {
-        setGroundData(response.data);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the ground data!", error);
-      });
-  }, []);
 
   const handlePitchClick = (pitch) => {
     setSelectedPitch(pitch);
@@ -31,10 +18,6 @@ export default function Ground() {
     setReviews([review, ...reviews]);
   };
 
-  if (!groundData) {
-    return <p>Loading...</p>; // Show loading state while data is being fetched
-  }
-
   return (
     <>
       <div className="page-ground">
@@ -42,19 +25,20 @@ export default function Ground() {
           <div className="info-text-ground">
             <div className="name-rev">
               <div className="name-rating-ground">
-                <h3>{groundData.name}</h3> {/* Ground Name */}
+                <h3>Boys Pitch</h3>
               </div>
               <div className="rating-ground">
-                <span>{groundData.rating}/5 ⭐</span> {/* Ground Rating */}
+                <span>4.3/5⭐</span>
               </div>
             </div>
             <div className="venue">
-              <p>Stadium Type: {groundData.stadiumType}</p> {/* Stadium Type */}
-              <p>Sports Hours: {groundData.sportsHours}</p> {/* Sports Hours */}
+              <p>Stadium Type: Outdoor</p>
+              <p>Sports Hours: 01:00 PM - 01:00 AM</p>
             </div>
             <div className="loc">
               <FaMapMarkerAlt className="icon" />
-              <p>{groundData.location}</p> {/* Ground Location */}
+              <p>Bhuptian Chow, Raiwind</p>
+              <br />
             </div>
           </div>
           <div className="pitch-pictures">
@@ -65,21 +49,14 @@ export default function Ground() {
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img
-                    src={groundData.images[0]}
-                    className="d-block w-100"
-                    alt="Ground Picture"
-                  />
+                  <img src={std_icon} className="d-block w-100" alt="..." />
                 </div>
-                {groundData.images.slice(1).map((img, index) => (
-                  <div key={index} className="carousel-item">
-                    <img
-                      src={img}
-                      className="d-block w-100"
-                      alt="Ground Picture"
-                    />
-                  </div>
-                ))}
+                <div className="carousel-item active">
+                  <img src={stdd_icon} className="d-block w-100" alt="..." />
+                </div>
+                <div className="carousel-item active">
+                  <img src={std_icon} className="d-block w-100" alt="..." />
+                </div>
               </div>
               <button
                 className="carousel-control-prev"
@@ -107,14 +84,20 @@ export default function Ground() {
               </button>
             </div>
           </div>
-          <p className="pitch-price">Rs.{groundData.price}/Hour</p>{" "}
-          {/* Ground Price */}
+          <p className="pitch-price">Rs.1500/Hour</p>
           <div className="description">
             <h3>Description</h3>
-            <p>{groundData.description}</p> {/* Ground Description */}
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Consequuntur blanditiis modi perferendis? Quia natus nesciunt
+              dolor odio, molestias pariatur accusantium, explicabo laborum
+              blanditiis illum possimus nobis commodi. Enim voluptatum autem
+              ducimus expedita. Consequatur animi nobis maxime quam, beatae
+              ipsam optio. Quae sit quis labore aperiam cumque libero pariatur
+              nostrum consectetur tempora? Facilis, numquam.
+            </p>
           </div>
         </div>
-
         <div className="calender-map">
           <div className="calender">
             <Booking selectedPitch={selectedPitch} />
@@ -130,29 +113,39 @@ export default function Ground() {
       <div className="ground-info">
         <p>Pitch Types</p>
         <div className="pitch-type spacing">
-          {groundData.pitchTypes.map((pitchType, index) => (
-            <span
-              key={index}
-              className={`${selectedPitch === pitchType ? "selected" : ""}`}
-              onClick={() => handlePitchClick(pitchType)}
-            >
-              {pitchType}
-            </span>
-          ))}
+          <span
+            className={selectedPitch === "50/20m" ? "selected" : ""}
+            onClick={() => handlePitchClick("50/20m")}
+          >
+            50 / 20 m
+          </span>
+          <span
+            className={selectedPitch === "60/30m" ? "selected" : ""}
+            onClick={() => handlePitchClick("60/30m")}
+          >
+            60 / 30 m
+          </span>
+          <span
+            className={selectedPitch === "70/40m" ? "selected" : ""}
+            onClick={() => handlePitchClick("70/40m")}
+          >
+            70 / 40 m
+          </span>
         </div>
 
         <p>Stadium Facilities</p>
         <div className="pitch-facility spacing">
-          {groundData.facilities.map((facility, index) => (
-            <span key={index}>{facility}</span>
-          ))}
+          <span>Canteen</span>
+          <span>Changing Room</span>
+          <span>Toilets</span>
+          <span>Parking</span>
         </div>
 
         <p>Equipment Provided</p>
         <div className="pitch-equipment spacing-1rem">
-          {groundData.equipment.map((item, index) => (
-            <span key={index}>{item}</span>
-          ))}
+          <span>Football</span>
+          <span>Paddle</span>
+          <span>Bat n Ball</span>
         </div>
       </div>
 

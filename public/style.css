@@ -119,6 +119,29 @@ html {
   transition: transform 0.3s ease-out;
 }
 
+.button-owner-auth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button-owner-auth a {
+  font-size: larger;
+  font-weight: 400;
+  text-decoration: none;
+  padding-right: 15px;
+}
+
+.btn-owner {
+  color: #1cb999;
+  /* position: relative;
+  top: 40%; */
+}
+
+.btn-owner:hover {
+  color: #338877;
+}
+
 .dropdown {
   margin-right: 15px;
 }
@@ -209,7 +232,7 @@ html {
   width: 100%;
   height: 0.1px;
   background-color: #d3d3d3;
-  margin: 15px 0px;
+  margin: 0px;
 }
 
 .inputs {
@@ -257,9 +280,9 @@ html {
 
 .submit-container {
   display: flex;
-  gap: 30px;
   margin-top: 30px;
-  margin-left: 530px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .submit {
@@ -268,9 +291,9 @@ html {
   align-items: center;
   width: 220px;
   height: 59px;
-  color: #fff;
   background-image: linear-gradient(to right, #55ad9b, #95d2b3);
   border-radius: 50px;
+  color: #fff;
   font-size: 35px;
   font-weight: 700;
   cursor: pointer;
@@ -313,6 +336,7 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 15px;
 }
 
 .pitches {
@@ -463,10 +487,11 @@ html {
 
 .pitch-pictures {
   height: 500px;
+  width: 100%;
   overflow: hidden;
 }
 
-.active img{
+.active img {
   height: 500px;
 }
 
@@ -815,7 +840,7 @@ button[disabled] {
   background-color: #f5f5f5;
 }
 
-.com-logo{
+.com-logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -823,7 +848,7 @@ button[disabled] {
   padding-right: 200px;
 }
 
-.logo{
+.logo {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -832,23 +857,22 @@ button[disabled] {
   padding-bottom: 20px;
 }
 
-.logo img{
+.logo img {
   height: 80px;
   width: 80px;
   margin-right: 25px;
 }
 
-.logo h1{
+.logo h1 {
   color: #202899;
 }
 
-.social-link{
+.social-link {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-
 
 .link-img-fb {
   height: 30px;
@@ -895,4 +919,240 @@ button[disabled] {
   z-index: 1;
   font-size: 20px;
   color: rgb(66, 66, 66);
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.auth-page {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-label {
+  color: white;
+}
+
+.error-text {
+  color: red;
+}
+
+.submit-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.submit-button {
+  width: 220px;
+  height: 59px;
+  background-image: linear-gradient(to right, #55ad9b, #95d2b3);
+  border-radius: 30px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.owner-img-name-edit-aprove-revenue {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.owner-img-name-edit-aprove {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 60%;
+}
+
+.owner-img-name-edit {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.owner-image img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+}
+
+.btn-edit-owner {
+  color: #55ad9b;
+  text-decoration: none;
+}
+
+.btn-appprove-owner {
+  color: #55ad9b;
+  text-decoration: none;
+}
+
+.btn-appprove-owner img {
+  height: 30px;
+  width: 30px;
+}
+
+.btn-edit-owner img {
+  height: 10px;
+  width: 20px;
+}
+
+.revenue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  border: 2px solid #55ad9b;
+  border-radius: 35px;
+  padding-top: 5px;
+  height: 24rem;
+  justify-content: space-between; /* Keeps header at top and totals at bottom */
+}
+
+.revenue h2 {
+  color: #55ad9b;
+  font-size: 35px;
+  font-weight: 700;
+  margin: 0;
+  border-bottom: 2px solid #55ad9b; /* Adds a line below the header */
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.revenue h3 {
+  color: #55ad9b;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.revenue-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1; /* Ensures it fills space between h2 and h3 */
+  justify-content: center;
+}
+
+.revenue-data-specific {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 2px solid #55ad9b; /* Removed border-bottom here */
+}
+
+.revenue-data-specific span {
+  color: #317165;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.upcoming-bookings{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 2px solid #55ad9b;
+  border-radius: 20px;
+}
+
+.upcoming-bookings-info b{
+  color: #55ad9b;
+}
+
+.upcoming-bookings-info strong{
+  color: red;
+}
+
+.edit-ground-details-calender {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.edit-ground-details {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 2px solid #55ad9b;
+  border-radius: 30px;
+  width: 60%;
+}
+
+.name-loc{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.pitch-pictures-edit {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-slide img{
+  height: 300px;
+}
+
+.pitch-data{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  
+}
+
+.pitch-dimen-price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.edit-ground {
+  background-color: #55ad9b; /* Change background color */
+  color: white; /* Change text and icon color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Add some padding */
+  font-size: 16px; /* Increase font size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  display: flex; /* Flexbox to align icon and text */
+  align-items: center; /* Vertically center icon and text */
+  gap: 10px; /* Space between icon and text */
+  transition: background-color 0.3s ease; /* Add hover effect */
+}
+
+.edit-ground:hover {
+  background-color: #3c8a74; /* Darken background on hover */
+}
+
+
+.calender {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 35%;
 }
